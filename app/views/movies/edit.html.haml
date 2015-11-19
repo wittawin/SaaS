@@ -11,4 +11,13 @@
   = label :movie, :release_date, 'Released On'
   = date_select :movie, :release_date
 
+  = label :movie, :description, 'Description' #Project 4.7
+  = text_area :movie, 'description'
+
+  %br
+
   = submit_tag 'Save Changes'
+  -#= link_to 'Cancel', movies_path 
+  -#Project 4.4
+  = link_to 'Cancel', movie_path(@movie) 
+  -#Project 4.5

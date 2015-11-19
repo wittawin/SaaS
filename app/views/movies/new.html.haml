@@ -9,6 +9,12 @@
   = select :movie, :rating, ['G','PG','PG-13','R','NC-17']
  
   = label :movie, :release_date, 'Released On'
-  = date_select :movie, :release_date, :start_year => 1930 #Project 4.7
+  = date_select :movie, :release_date
+
+  = label :movie, :description, 'Description' #Project 4.7
+  = text_area :movie, 'description'
+
+  %br
 
   = submit_tag 'Save Changes'
+  = link_to 'Cancel', movies_path #Project 4.4

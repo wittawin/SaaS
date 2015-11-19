@@ -1,6 +1,15 @@
 Myrottenpotatoes::Application.routes.draw do
+  #Project 4.3.3
+  get 'movies_:sort' => 'movies#index', :as => 'sort_movies'
   resources :movies
   root :to => redirect('/movies')
+
+  #Single Sign-On
+  get 'login' => 'sessions#login'
+  get 'auth/:provider/callback' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
+  get 'auth/failure' => 'sessions#failure'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
