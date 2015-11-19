@@ -1,5 +1,12 @@
 %h2 Create New Movie
 
+- unless @movie.errors.empty?
+  #warning
+    Errors prevented this movie from being #{controller.action_name}d:
+    %ul
+      - @movie.errors.full_messages.each do |error|
+        %li= error
+
 = form_tag movies_path, :method => :post do
 
   = label :movie, :title, 'Title'
